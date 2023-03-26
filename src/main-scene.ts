@@ -4,9 +4,7 @@ import marioBigRunning from './images/mario-big-running.png';
 import skyBackground from './images/asset/background/Day/1.png';
 import buildingBackground from './images/asset/background/Day/2.png';
 import treeBackground from './images/asset/background/Day/5.png';
-
-const WIDTH = 576;
-const HEIGHT = 324;
+import config from './config';
 
 export default class MainScene extends Phaser.Scene {
   player: Types.Physics.Arcade.SpriteWithDynamicBody | null = null;

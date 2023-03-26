@@ -1,15 +1,13 @@
 import * as Phaser from 'phaser';
 import MainScene from './main-scene';
+import config from './config';
 
 import './style.css';
 
-const WIDTH = 576 * 2;
-const HEIGHT = 324;
-
-const config: Phaser.Types.Core.GameConfig = {
+const gameConfig: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
-  width: WIDTH,
-  height: HEIGHT,
+  width: config.width,
+  height: config.height,
   backgroundColor: '#cdcdcd',
   physics: {
     default: 'arcade',
@@ -21,4 +19,4 @@ const config: Phaser.Types.Core.GameConfig = {
   scene: [MainScene],
 };
 
-const game = new Phaser.Game(config);
+const game = new Phaser.Game(gameConfig);
