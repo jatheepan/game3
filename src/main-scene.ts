@@ -1,20 +1,22 @@
 import * as Phaser from 'phaser';
-import { Types } from 'phaser';
-import config from './config';
+import objectMap from './images/objectmap.png';
+import map from './map.json';
 
 export default class MainScene extends Phaser.Scene {
-  player: Types.Physics.Arcade.SpriteWithDynamicBody | null = null;
-
   preload() {
-    this.load.tilemapTiledJSON('map', 'untitled.json');
-    console.log('this is preload stage');
+    this.load.image('tiles', objectMap);
+    this.load.tilemapTiledJSON('map', map);
   }
 
   create() {
-    //
-    const map = this.make.tilemap({ key: 'map' });
-    const tileset = map.addTilesetImage('untitled', 'tiles');
-    const backgroundKey = map.addTilesetImage('background', tileset, 0, 0);
-    // const layer = map.createStaticLayer('Tile Layer 1', tileset, 0, 0);
+    const map = this.make.tilemap({
+      key: 'map',
+      tileWidth: 48,
+      tileHeight: 48,
+    });
+    const tileset = map.addTilesetImage('objects', 'tiles');
+
+    const layer1 = map.createLayer('background', tileset, 0, 0);
+    const layer2 = map.createLayer('floor', tileset, 0, 0);
   }
 }

@@ -1,4 +1,6 @@
+const tileSize = 48;
+
 export default {
-  width: 576 * 2,
-  height: 324,
+  width: tileSize * 36,
+  height: tileSize * 14,
 } as const;
