@@ -1,3 +1,4 @@
+import * as matter from 'matter-js';
 import * as Phaser from 'phaser';
 import MainScene from './main-scene';
 import config from './config';
@@ -9,11 +10,15 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
   width: config.width,
   height: config.height,
   physics: {
-    default: 'arcade',
-    arcade: {
+    default: 'matter',
+    matter: {
       gravity: { y: 400 },
       debug: false,
     },
+    // arcade: {
+    //   gravity: { y: 400 },
+    //   debug: false,
+    // },
   },
   scene: [MainScene],
 };
