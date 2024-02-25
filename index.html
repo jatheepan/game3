@@ -12,10 +12,18 @@
       }
 
       body {
+        color: white;
         background: black;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      }
+      #app {
+        position: absolute;
+        top: calc(50% - 200px);
+        left: calc(50% - 200px);
+      }
+      #score {
+        font-size: 18px;
+        text-align: center;
+        margin-top: 10px;
       }
       canvas {
         border: 1px solid white;
@@ -23,7 +31,10 @@
     </style>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div id="score"></div>
+      <canvas width="400" height="400" id="canvas"></canvas>
+    </div>
     <script type="module" src="/src/mysnake.ts"></script>
   </body>
 </html>
